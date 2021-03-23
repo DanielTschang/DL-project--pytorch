@@ -2,6 +2,8 @@ import numpy as np
 from CNN import *
 from DNN import *
 from devices import *
+from dataset import loaddataset
+import torch.optim as optim
 
 
 
@@ -67,7 +69,7 @@ if __name__ == "__main__":
     print("device : ", device)
     print("每個batch之長度 : ",len(trainloader))
 
-    model = whichModel()
+    model = whichModel("CNN")
     train(model,epoch=3,lr=0.001)
     eval(model)
 
